@@ -3,7 +3,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 ScrollSmoother.create({
   wrapper: "#smooth-wrapper",
   content: "#smooth-content",
-  smooth: 4,            // Smoothness (higher is slower)
+  smooth: 3,            // Smoothness (higher is slower)
   effects: true,          // Enable data-speed & data-lag
 });
 
@@ -38,7 +38,7 @@ ScrollTrigger.matchMedia({
         scrub: true,
       },
       y: '225vh',
-      x: '5vw',
+      x: '10vw',
       width: '35vw',
       rotate: 0,
       ease: 'power1.inOut',
@@ -53,7 +53,7 @@ ScrollTrigger.matchMedia({
         scrub: true,
       },
       y: '350vh',
-      x: '-20vw',
+      x: '0vw',
       width: '42vw',
       rotate: 0,
       ease: 'power1.inOut',
@@ -93,7 +93,7 @@ ScrollTrigger.matchMedia({
         end: 'bottom bottom',
         scrub: true,
       },
-      y: isShortHeight ? '460vh' : '460vh',
+      y: isShortHeight ? '432vh' : '425vh',
       x: '-13vw',
       width: '300px',
       opacity: 0,   // 👈 fades out with scroll

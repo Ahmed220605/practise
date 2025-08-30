@@ -3,7 +3,7 @@
   --bg-color: #F5ECE4;
   --primary-color: #734425;
   --secondary-color: #C26819;
-  --black: #2E2E2E;
+  --black: #1B0A04;
   --heading-font: "Outfit", sans-serif;
 }
 
@@ -55,7 +55,7 @@ img{
   color: var(--primary-color);
   text-transform: uppercase;
   line-height: 0.95;
-  margin-bottom: 1.4rem;
+  margin-top: 5.4rem;
 }
 
 /* local properties */
@@ -69,12 +69,18 @@ header{
   transform: translateX(-50%);
   top: 0;
   z-index: 1;
+  
 }
 
-header nav{
+header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: rgba(255, 255, 255, 0.2); /* light transparent background */
+  backdrop-filter: blur(10px);           /* blur effect */
+  -webkit-backdrop-filter: blur(10px);   /* for Safari support */
+  padding: 10px 20px;                   /* some spacing */
+  border-radius: 12px;                  /* optional rounded corners */
 }
 
 header .logo{
@@ -93,7 +99,7 @@ header .btn{
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 2.2%;
+  top: 3.5%;
   width: 40vw;
   max-width: 660px;
   filter: drop-shadow(8px 35px 6px #00000025);
@@ -105,7 +111,7 @@ header .btn{
 
 #section1{
   height: 100vh;
-  width: 60vw;
+  width: 70vw;
   margin: auto;
   display: flex;
   align-items: center;
@@ -123,7 +129,7 @@ header .btn{
 
 #section2{
   min-height: 100vh;
-  padding-top: 4vw;
+  padding-top: 2vw;
 }
 
 #section2 .btn{
@@ -134,7 +140,6 @@ header .btn{
 #section2 .content-wrapper{
   max-width: 500px;
 }
-
 .feature-wrapper{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -177,7 +182,7 @@ header .btn{
 }
 
 #section3 .content{
-  max-width: 500px;
+  max-width: 600px;
   margin-left: auto;
 }
 
@@ -193,13 +198,13 @@ header .btn{
 }
 
 #section4 img{
-  border: 10px solid #fff;
+  border: 1px solid var(--primary-color);
   box-shadow: 0 0 30px #73442536;
   position: absolute;
 }
 
 #section4 .img1{
-  max-width: 260px;
+  max-width: 470px;
   top: 12%;
   left: 3%;
   transform: rotate(15deg);
@@ -213,7 +218,7 @@ header .btn{
 }
 
 #section4 .img3{
-  max-width: 340px;
+  max-width: 370px;
   left: 10%;
   bottom: 12%;
   transform: rotate(-12deg);
@@ -251,6 +256,11 @@ header .btn{
 .product .name{
   font-size: 24px;
   font-weight: 500;
+  filter: drop-shadow(6px 15px 5px #00000018);
+  backdrop-filter: blur(10px);           /* blur effect */
+  -webkit-backdrop-filter: blur(10px);
+  background-color: var(--black);
+  color: var(--primary-color);
 }
 
 .product .price{
