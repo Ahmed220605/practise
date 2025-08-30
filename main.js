@@ -9,7 +9,7 @@ ScrollSmoother.create({
 
 
 let isShortHeight = window.screen.height < 1050;  // this is only tp make animation acccording to screen height but not requrired.. 
-                                                  // you can remove or change this value according to your requrement
+// you can remove or change this value according to your requrement
 // console.log(window.screen.height);
 
 ScrollTrigger.matchMedia({
@@ -23,8 +23,8 @@ ScrollTrigger.matchMedia({
         scrub: true,
       },
       y: '85vh',
-      x: '18vw',
-      width: '32vw',
+      x: '10vw',
+      width: '40vw',
       rotate: 90,
       ease: 'power1.inOut',
       immediateRender: false
@@ -37,10 +37,10 @@ ScrollTrigger.matchMedia({
         end: 'bottom bottom',
         scrub: true,
       },
-      y: '218vh',
-      x: '0',
+      y: '225vh',
+      x: '5vw',
       width: '35vw',
-      rotate: 35,
+      rotate: 0,
       ease: 'power1.inOut',
       immediateRender: false
     });
@@ -52,25 +52,39 @@ ScrollTrigger.matchMedia({
         end: 'center center',
         scrub: true,
       },
-      y: '308vh',
+      y: '350vh',
+      x: '-20vw',
       width: '42vw',
       rotate: 0,
       ease: 'power1.inOut',
       immediateRender: false
     });
 
-     gsap.to('#headphone', {
-      scrollTrigger: {
-        trigger: '#section5',
-        start: 'top bottom',
-        end: 'center bottom',
-        scrub: true,
-      },
-      y: isShortHeight ? '360vh' : '344vh',
-      width: '28vw',
-      ease: 'power1.inOut',
-      immediateRender: false
-    });
+    //  gsap.to('#headphone', {
+    //   scrollTrigger: {
+    //     trigger: '#section5',
+    //     start: 'top bottom',
+    //     end: 'center bottom',
+    //     scrub: true,
+    //   },
+    //   y: isShortHeight ? '360vh' : '344vh',
+    //   width: '28vw',
+    //   ease: 'power1.inOut',
+    //   immediateRender: false
+    // });
+
+    // gsap.to('#headphone', {
+    //   scrollTrigger: {
+    //     trigger: '#section5',
+    //     start: 'center bottom',
+    //     end: 'bottom bottom',
+    //     scrub: true,
+    //   },
+    //   y: isShortHeight ? '432vh' : '419vh',
+    //   width: '300px',
+    //   ease: 'power1.inOut',
+    //   immediateRender: false
+    // });
 
     gsap.to('#headphone', {
       scrollTrigger: {
@@ -79,11 +93,14 @@ ScrollTrigger.matchMedia({
         end: 'bottom bottom',
         scrub: true,
       },
-      y: isShortHeight ? '432vh' : '419vh',
+      y: isShortHeight ? '460vh' : '460vh',
+      x: '-13vw',
       width: '300px',
+      opacity: 0,   // 👈 fades out with scroll
       ease: 'power1.inOut',
       immediateRender: false
     });
+
 
     // content animation
 
@@ -140,8 +157,8 @@ ScrollTrigger.matchMedia({
     });
 
     gsap.from(split.chars, {
-      yPercent: ()=> gsap.utils.random(-100, 100),
-      rotation: ()=> gsap.utils.random(-30, 30),
+      yPercent: () => gsap.utils.random(-100, 100),
+      rotation: () => gsap.utils.random(-30, 30),
       autoAlpha: 0,
       ease: 'back.out(1.5)',
       stagger: {
