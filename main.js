@@ -180,3 +180,30 @@ ScrollTrigger.matchMedia({
 })
 
 // login page animation
+// snap values
+const valueX = 50;
+const valueY = 50;
+
+// make all h4 draggable
+Draggable.create("h4", {
+  type: "x,y",
+  bounds: "#container",
+  inertia: true,
+  snap: {
+    x: value => Math.round(value / valueX) * valueX,
+    y: value => Math.round(value / valueY) * valueY
+  }
+});
+
+// floating effect
+gsap.utils.toArray("h4").forEach(h => {
+  // animate with xPercent/yPercent instead of x/y
+  gsap.to(h, {
+    xPercent: "+=" + gsap.utils.random(-10, 10), // smaller % so it drifts around its spot
+    yPercent: "+=" + gsap.utils.random(-20, 20),
+    duration: gsap.utils.random(3, 7),
+    yoyo: true,
+    repeat: -1,
+    ease: "sine.inOut"
+  });
+});
