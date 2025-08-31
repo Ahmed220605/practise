@@ -13,12 +13,22 @@
     />
     <!-- css -->
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div id="container">
       <header class="w-full">
         <nav>
-          <img src="./images/Correct-Logo.png" alt="" class="logo" />
+          <a href="index.html">
+            <img src="./images/Correct-Logo.png" alt="Logo" class="logo" />
+          </a>
+
           <a href="index.html" class="btn radius">Go Back</a>
         </nav>
       </header>
@@ -43,7 +53,36 @@
       <h4 id="login-h19">Litigation</h4>
       <h4 id="login-h20">Contract</h4>
 
-      <div class="login-div"></div>
+      <div class="login-div">
+        <h1 class="title">Sign Up</h1>
+        <div class="underline"></div>
+        <form>
+          <div class="input-group">
+            <div class="input-field namefield">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+
+            <div class="input-field">
+              <i class="fa-solid fa-at"></i>
+              <input type="email" placeholder="Email Address" />
+            </div>
+
+            <div class="input-field">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <p>
+              <span class="password">Password Suggestions </span
+              ><a href="#" id="suggestion-link"> Click Here!</a>
+            </p>
+          </div>
+          <div class="btn-field">
+            <button type="button" class="signupbtn">Sign Up</button>
+            <button type="button" class="disable signinbtn">Sign In</button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
