@@ -180,3 +180,94 @@ ScrollTrigger.matchMedia({
 })
 
 // login page animation
+// snap values
+const valueX = 50;
+const valueY = 50;
+
+// make all h4 draggable
+Draggable.create("h4", {
+  type: "x,y",
+  bounds: "#container",
+  inertia: true,
+  snap: {
+    x: value => Math.round(value / valueX) * valueX,
+    y: value => Math.round(value / valueY) * valueY
+  }
+});
+
+// floating effect
+gsap.utils.toArray("h4").forEach(h => {
+  // animate with xPercent/yPercent instead of x/y
+  gsap.to(h, {
+    xPercent: "+=" + gsap.utils.random(-10, 10), // smaller % so it drifts around its spot
+    yPercent: "+=" + gsap.utils.random(-20, 20),
+    duration: gsap.utils.random(3, 7),
+    yoyo: true,
+    repeat: -1,
+    ease: "sine.inOut"
+  });
+});
+
+// login page functionality
+let signin = document.querySelector('.signinbtn');
+let signup = document.querySelector('.signupbtn');
+let title = document.querySelector('.title');
+let namefield = document.querySelector('.namefield');
+let underline = document.querySelector('.underline');
+let pass = document.querySelector('.password');
+let link = document.getElementById('suggestion-link');
+
+// flag to track current mode
+let isSignUp = true;
+
+signin.addEventListener('click', () => {
+  namefield.style.maxHeight = '0';
+  title.innerText = 'Sign In';
+  signup.classList.add('disable');
+  signin.classList.remove('disable');
+  underline.style.transform = 'translateX(100%)';
+  
+  pass.innerHTML = 'Forgot Password? ';
+  link.textContent = "Click Here!";
+  isSignUp = false;
+});
+
+signup.addEventListener('click', () => {
+  namefield.style.maxHeight = '60px';
+  title.innerText = 'Sign Up';
+  signup.classList.remove('disable');
+  signin.classList.add('disable');
+  underline.style.transform = 'translateX(0%)';
+  
+  pass.innerHTML = 'Password Suggestions ';
+  link.textContent = "Click Here!";
+  isSignUp = true;
+});
+
+// password generator
+function generatePassword(length = 12) {
+  const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    password += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return password;
+}
+
+// link click handler changes depending on mode
+link.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  if (isSignUp) {
+    // Sign Up: suggest password
+    const newPassword = generatePassword(12);
+    const passwordField = document.querySelector('input[type="password"]');
+    passwordField.value = newPassword;
+    alert("Suggested Password: " + newPassword);
+  } else {
+    // Sign In: forgot password flow
+    // Example: redirect to forgot password page
+    alert("Redirecting to Forgot Password page...");
+    window.location.href = "forgot-password.html"; 
+  }
+});
