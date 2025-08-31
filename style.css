@@ -239,7 +239,7 @@ header .btn{
   margin-top: 3rem;
 }
 
-#section5 img{
+.product img{
   width: 100%;
   height: 300px;
   max-width: 300px;
@@ -253,24 +253,35 @@ header .btn{
   flex-direction: column;
   align-items: center;
   justify-content: end;
+  position: relative;
 }
 
 .product .name{
-  font-size: 24px;
+  position: absolute;
+  top: 120px;
+  font-size: 20px;
   font-weight: 500;
   width: 300px;
   height: 70px;
-  filter: drop-shadow(6px 15px 5px #00000018);
-  backdrop-filter: blur(10px);           /* blur effect */
-  -webkit-backdrop-filter: blur(10px);
-  background-color: var(--black);
-  color: var(--primary-color);
+  opacity: 0;
 }
 
-.product .price{
+.product:hover .name{
+  opacity: 1;
+  color: var(--bg-color);
+  padding: 10px;
+  transition: opacity 0.3s ease-in-out;
+}
+.product:hover img{
+  filter: brightness(50%) ;
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/* .product .price{
   font-size: 24px;
   font-weight: 700;
-}
+} */
 
 /* section 6 */
 
