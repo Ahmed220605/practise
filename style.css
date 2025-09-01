@@ -21,6 +21,10 @@ body{
   font-size: 18px;
   line-height: 1.5;
 }
+::selection{
+  /* background-color: var(--secondary-color); */
+  color: var(--secondary-color);
+}
 
 .btn{
   color: #fff;
